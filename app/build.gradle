@@ -18,13 +18,25 @@ android {
 
     buildTypes {
         release {
+            buildConfigField "String", "API_KEY_WEATHER", "\"b40837702a3643b69c3150122240108\""
+            buildConfigField "String", "API_KEY_OPEN_WEATHER", "\"d33fa128e61e8e19467d1bffb2f8950e\""
+            buildConfigField "String", "API_KEY_GEOCODING", "\"7b08e9670e804e93933f05e19cebeba9\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "API_KEY_WEATHER", "\"b40837702a3643b69c3150122240108\""
+            buildConfigField "String", "API_KEY_OPEN_WEATHER", "\"d33fa128e61e8e19467d1bffb2f8950e\""
+            buildConfigField "String", "API_KEY_GEOCODING", "\"7b08e9670e804e93933f05e19cebeba9\""
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        buildConfig true
+        viewBinding true
     }
 }
 
@@ -32,8 +44,22 @@ dependencies {
 
     implementation libs.appcompat
     implementation libs.material
-    implementation libs.activity
     implementation libs.constraintlayout
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.sdp.android
+    implementation libs.ssp.android
+    implementation libs.okhttp
+    implementation libs.gson
+    implementation libs.kotlin.stdlib
+    implementation libs.android.volley
+    implementation libs.recyclerview
+    implementation libs.legacy.support.v4
+    implementation libs.activity
+    implementation libs.play.services.location
+    implementation libs.glide
+    annotationProcessor libs.compiler
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
