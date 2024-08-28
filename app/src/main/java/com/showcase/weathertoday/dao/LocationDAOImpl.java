@@ -36,12 +36,12 @@ public class LocationDAOImpl implements LocationDAO {
         Cursor cursor = null;
 
         try {
-            cursor = database.rawQuery("SELECT COUNT(*) FROM" + DatabaseHelper.TABLE_COORDINATES, null);
+            cursor = database.rawQuery("SELECT COUNT(*) FROM " + DatabaseHelper.TABLE_COORDINATES, null);
             cursor.moveToFirst();
             int count = cursor.getInt(0);
 
             if (count > 0) {
-                Log.w(TAG, "Registo já existe");
+                Log.w(TAG, "Tentativa de inserir um novo registro quando já existe um.");
                 return;
             }
 

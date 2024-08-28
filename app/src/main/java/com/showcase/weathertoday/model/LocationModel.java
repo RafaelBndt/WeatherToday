@@ -30,6 +30,28 @@ public class LocationModel implements Serializable {
         this.neighborhood = neighborhood;
     }
 
+    public LocationModel(double latitude, double longitude, String neighborhood) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.neighborhood = neighborhood;
+    }
+
+    public LocationModel(String time, String description, String temperature, String iconUrl) {
+        this.time = time;
+        this.description = description;
+        this.temperature = temperature;
+        this.iconUrl = iconUrl;
+    }
+
+    public LocationModel(double latitude, double longitude, String name, String state, String country){
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.state = state;
+        this.country = country;
+    }
+
+
     public String getName() {
         return name;
     }
